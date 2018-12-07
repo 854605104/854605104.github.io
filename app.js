@@ -85,7 +85,7 @@ var column = null;
     .attr('class', 'x axis')
     .call(xAxis)
     .append('text')
-    .text('Criteria X')
+    .text('Central Novelty')
     .attr('id', 'x-axis-desc')
     .attr('transform', 'translate(-5' + ',40)')//控制Text位置
     // .on('mouseover', x_tip.show)
@@ -97,13 +97,13 @@ var column = null;
   var y_start = itemSize*10;
   svg.append('g')
     // modify x-axis
-    .attr('transform', 'translate(' + (margin.left-5) + ',' + margin.top + ')')
+    .attr('transform', 'translate(' + (margin.left-2) + ',' + margin.top + ')')
     .attr('class', 'y axis')
     .call(yAxis)
     .append('text')
-    .text('Criteria Y')
+    .text('Extreme Novelty')
     .attr('id', 'y-axis-desc')
-    .attr('transform', 'translate(-32,' + y_start + ') rotate(-90)')
+    .attr('transform', 'translate(-35,' + y_start + ') rotate(-90)')
     // .on('mouseover', y_tip.show)
     .on('mouseout', y_tip.hide)
     // .append('tspan')

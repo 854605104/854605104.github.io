@@ -318,9 +318,9 @@ function getPatentsByKeywords() {
         url: url,
         type: 'POST',
         beforeSend: function () {
+            $('#myModal').modal('hide');
             $('#keywords_card').hide();
             $('#card').hide();
-            $('#myModal').modal('hide');
             $('#loadingSpinnerModal').modal('show');
         },
         complete: function () {
@@ -340,35 +340,20 @@ function getPatentsByKeywords() {
             var info_len = patents.length;
             if (info_len == 0){
                 //$("#patent-info-panel").append($('<label />', { 'text': PATENT_NO_FOUND}));
-                $("#keywords_card").append($('<label />', { 'text': PATENT_NO_FOUND}));
+                $("#keywords_card").append($('<label />', {'text': PATENT_NO_FOUND}));
             } else{
                 //var existing_patent_list = info.patents.existing_patent_list;
                 var existing_patent_dict = info.patents.existing_patent_dict;
                 var existing_patent_list = sortDictionaryByDate(existing_patent_dict);
               $("#keywords_card").append('<div class="row"><h4 style="font-size: 24px;font-weight: 500;color: #555555;margin-bottom: 8px;margin-left: 6px">Keywords Searching Result</h4> </div>');
                 for (var i = 0; i < existing_patent_list.length; i++) {
-                //var existing_patent_dict = info.patents.existing_patent_dict;
-                
-                //for (var i = 0; i < existing_patent_dict.length; i++) {
-                    // display_info = "\t" + patents[i].patent_number + "\t" +
-                    //     patents[i].patent_title + ", " +
-                    //     patents[i].patent_date;
                     var pid = existing_patent_list[i];
-                    // var pid = Object.keys(existing_patent_dict);
+                    //var pid = Object.keys(existing_patent_dict);
                     var patent_url = 'https://www.google.com.sg/patents/US' + pid; 
-                    var patent_title = '<a href="' + patent_url + '" target="_blank">' + patents[pid].patent_title + '</a>';
-                    display_info = "\t" + patent_title + ", " + patents[pid].asg_name + ", " + patents[pid].asg_country + ", " + patents[pid].patent_date + ".";
-
-                    //pop up a panel
-                    // $("#patent-info-panel")
-                    //     .append($('<input type="radio" name="patent" class="" />')
-                    //         .attr("value", patents[i].patent_number));
-                    // $("#patent-info-panel").append($('<label />', { 'text': display_info }));
-                    // $("#patent-info-panel").append($('</br>'))
-
-                    //$("#patent-info-panel").append('<div class="form-check"><label class="form-check-label"><input class="form-check-input" type="radio" name="patent" id="" value="'+patents[i].patent_number+'" checked>'+display_info+'</label></div>')
-
-                  $("#keywords_card").append('<div class="form-check"><label class="form-check-label"><input class="form-check-input" type="radio" name="patent" value="'+pid+'">'+display_info+'</label></div>');
+                    var patent_title = '<span style="font-weight: bold">' + patents[pid].patent_title + '</span>';
+                    var patent_link = '<a href="' + patent_url + '" target="_blank">' + "&gt&gt" + '</a>';
+                    display_info = "\t" + patent_title + ", " + patents[pid].asg_name + ", " + patents[pid].asg_country + ", " + patents[pid].patent_date + ". " +"\t"+ patent_link;
+                    $("#keywords_card").append('<div class="form-check"><label class="form-check-label"><input class="form-check-input" type="radio" name="patent" value="'+pid+'">'+display_info+'</label></div>');
                 }
             }
         }

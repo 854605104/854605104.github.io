@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<script>
+<script>//New Visitor Judgement
   window.onload = function(){
     var newVisitor = isNewVisitor();// 如果是新访客
     if(newVisitor === true)
@@ -74,49 +74,46 @@
     <header>
         <nav class="nav-box">
             <div class="row">
-                <img src="resources/img/Logo.png" alt="Assess Patent Logo" class="logo1">
                 <a href="https://idc.sutd.edu.sg/">
                     <img src="resources/img/IDC.png" alt="IDC Logo" class="logo2">
                 </a>
                 <ul class="main-nav js--main-nav">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="Instruction_start_page.html">Instruction</a></li>
-                    <li><a href="#AboutUs">About us</a></li>
-                    <li><a href="Chinese">中文</a></li>
+                    <li><a href="Instruction_start_page.html">Demo</a></li>
+                    <li><a href="how_it_works.html">How it works</a></li>
+                    <li><a href="https://idc.sutd.edu.sg/">About us</a></li>
                 </ul>
             </div>
         </nav>
         <div class="header-box">
-            <h4 class="header-h4">Data-driven assessment of Patent Value</h4>
-            <h1 class="header-h1">Assess New Patents</h1>
+            <h1>Patent Novelty and Value</h1>
         </div>
     </header>
 
     <div class="row search-area">
-        <div class="col span-1-of-2">
+        <div class="col span-3-of-5">
+            <form id='keyword-form' class="form-inline"
+                  style="display:inline-block;width: 100%; margin: 0 0 0 0;padding-top: 15px;text-align: left;">
+                <div id="qsrxSearchbar">
+                    <span class="ID-text">Keywords: </span>
+                    <span><input type="text" class="form-control" id="keywords-input"
+                                 placeholder=" Separated by commas" style="width: 65%;"></span>
+                    <button type="submit" class="btn home-btn-assess" id="search-button" data-toggle="modal"
+                            data-target="#myModal">
+                            Search
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col span-2-of-5">
             <form id='patent-form' class="form-inline"
-                  style="display:inline-block;width: 100%; padding-top: 15px;padding-left: 80px;margin: 0 0 0 0;">
+                  style="display:inline-block;width: 100%; padding-top: 15px;margin: 0 0 0 0;text-align: left">
                 <div id="qsrxSearchbar" style="display: inline-block">
                     <span class="ID-text">Patent ID: </span>
                     <span class="ID-input"><input type="text" class="form-control" id="patent-number-input"
                                                   placeholder=" 4593429"></span>
                     <button type="submit" class="btn home-btn-assess btn-primary" id="locate-button">
-                        <i class="fa fa-search"></i> Assess
-                    </button>
-                </div>
-            </form>
-        </div>
-
-        <div class="col span-1-of-2">
-            <form id='keyword-form' class="form-inline"
-                  style="display:inline-block;width: 100%; margin: 0 0 0 0;padding-top: 15px;padding-right: 50px">
-                <div id="qsrxSearchbar">
-                    <span class="ID-text">Keywords: </span>
-                    <span><input type="text" class="form-control" id="keywords-input"
-                                 placeholder=" Separated by commas"></span>
-                    <button type="submit" class="btn home-btn-assess" id="search-button" data-toggle="modal"
-                            data-target="#myModal">
-                        <i class="fa fa-search"></i> Search
+                        Assess
                     </button>
                 </div>
             </form>
@@ -131,7 +128,6 @@
                 <div class="row days-hours-heatmap">
                     <svg role="heatmap" class="heatmap col span-9-of-12"></svg>
                     <div class="col span-3-of-12">
-                        <h4 class="heatmap-bar-text">Patent Value</h4>
                         <img src="resources/img/gradient%20bar.png" class="heatmap-bar" alt="">
                     </div>
                 </div>

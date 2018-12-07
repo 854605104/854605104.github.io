@@ -112,7 +112,6 @@ input[type=submit]:active {
   width:auto;
   float:left;
   margin-top:10px;
-  margin-left:20px;
   margin-bottom: 10px;
 }
 
@@ -158,12 +157,9 @@ input[type=submit]:active {
   height: 205px;
   text-align: center;
 }
-.header-h4{
-  padding-top: 50px;
-  padding-bottom: -20px;
-}
+
 .header-h1{
-  padding-top: 0;
+  padding-top: 70px;
 }
 
 /* ----------------------------------------------- */
@@ -188,34 +184,128 @@ input[type=submit]:active {
 }
 
 /* -----Cards-----*/
-.card-01{
-  background-color: #f1f8fe;
-  border-radius: 8px;
-  margin-top: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  border-left: 8px solid #207eb7;
-  height:318px;
-}
-.card-02{
-  background-color: #f1f8fe;
-  border-radius: 8px;
-  margin-top: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  border-left: 8px solid #1e4380;
-  height:318px;
-}
-.card-03{
-  background-color: #f1f8fe;
-  border-radius: 8px;
-  margin-top: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  border-left: 8px solid #6fc3c6;
-  height:318px;
+/*.card-01{*/
+  /*background-color: white;*/
+  /*border-radius: 8px;*/
+  /*margin-top: 20px;*/
+  /*box-shadow: 0 7px 20px 0 rgba(0,0,0,0.2);*/
+  /*border-top: 30px solid #207eb7;*/
+  /*height:340px;*/
+  /*margin-bottom: 50px;*/
+/*}*/
+/*.card-02{*/
+/*background-color: white;*/
+/*border-radius: 8px;*/
+/*margin-top: 20px;*/
+/*box-shadow: 0 7px 20px 0 rgba(0,0,0,0.2);*/
+/*border-left: 8px solid #1e4380;*/
+/*height:340px;*/
+/*margin-bottom: 50px;*/
+/*}*/
+/*.card-03{*/
+/*background-color: white;*/
+/*border-radius: 8px;*/
+/*margin-top: 20px;*/
+/*box-shadow: 0 7px 20px 0 rgba(0,0,0,0.2);*/
+/*border-left: 8px solid #6fc3c6;*/
+/*height:340px;*/
+/*margin-bottom: 50px;*/
+/*}*/
+.card-header-01,
+.card-header-02,
+.card-header-03{
+  padding-left: 8px;
+  padding-right: 8px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  height: 80px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
 }
 
-.card-content{
-  padding-left: 8px;
+.card-header-01{
+  background-color: #207eb7;
 }
+.card-header-02{
+  background-color: #1e4380;
+}
+.card-header-03{
+  background-color: #6fc3c6;
+}
+.card-bottom{
+  height: auto;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 7px 20px 0 rgba(0,0,0,0.2);
+  padding-top: 8px;
+  padding-left: 14px;
+  padding-right: 6px;
+  padding-bottom: 16px;
+}
+.card-content{
+  border-radius: 16px;
+}
+
+.card-content:hover{
+  box-shadow: 0 12px 27px 0 rgba(0,0,0,0.08);
+  margin-top: 10px;
+  -webkit-transition: box-shadow 0.5s, margin-top 0.5s;
+
+}
+.card-content{
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+/*.card-content{*/
+  /*padding-left: 14px;*/
+  /*padding-right: 8px;*/
+  /*padding-top: 8px;*/
+/*}*/
+.card-h3,
+.card-h3-02,
+.card-h3-03{
+  color: white;
+}
+
+.card-h3{
+  padding-top: 30px;
+  font-size: 110%;
+}
+.card-h3-02{
+  padding-top: 20px;
+  padding-bottom: 7px;
+  font-size: 100%;
+  line-height: 100%;
+}
+.card-h3-03{
+  padding-top: 8px;
+  padding-bottom: 3px;
+  font-size: 95%;
+}
+.card-h3 a:visited,
+.card-h3 a:link{
+  color: white;
+  font-weight: 700;
+  font-style: unset;
+  font-size: 80%;
+}
+
+.card-h3-02 a:visited,
+.card-h3-02 a:link{
+  color: white;
+  font-weight: 700;
+  font-style: unset;
+  font-size: 80%;
+
+}
+.card-h3-03 a:visited,
+.card-h3-03 a:link{
+  color: white;
+  font-weight: 700;
+  font-style: unset;
+  font-size: 80%;
+
+}
+
 .card-h4{
   margin-top: 2px;
   margin-bottom: 2px;
@@ -232,11 +322,13 @@ input[type=submit]:active {
 .assignee-02{
   letter-spacing: -0.9px;
   word-spacing: -0.5px;
-  font-size: 70%;
+  font-size: 68%;
+  line-height: 150%;
 }
 .assignee-03{
   letter-spacing: -0.5px;
   font-size: 70%;
+  line-height: 150%;
 }
 .text-abstract{
   color: #555555;
@@ -257,7 +349,7 @@ input[type=submit]:active {
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   margin-right: 8px;
-  max-height: 100px;
+  max-height: 118px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -265,7 +357,7 @@ input[type=submit]:active {
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   margin-right: 8px;
-  max-height: 80px;
+  max-height: 118px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -315,7 +407,6 @@ input[type=submit]:active {
   vertical-align: center;
   text-align: center;
   margin-top: 16px;
-
 }
 
 .btn-assess:link,
@@ -333,44 +424,5 @@ input[type=submit]{
   border: 1px solid #fff;
 }
 
-.card-h3 a:visited,
-.card-h3 a:link{
-  color: #135187;
-  font-weight: 700;
-  font-style: unset;
-  font-size: 90%;
-}
 
-.card-h3{
-  padding-top: 5px;
-  padding-bottom: 8px;
-}
-.card-h3-02 a:visited,
-.card-h3-02 a:link{
-  color: #135187;
-  font-weight: 700;
-  font-style: unset;
-  font-size: 90%;
-  word-spacing: 0;
-  letter-spacing: 0;
-
-}
-.card-h3-02{
-  padding-top: 3px;
-  padding-bottom: 7px;
-}
-.card-h3-03 a:visited,
-.card-h3-03 a:link{
-  color: #135187;
-  font-weight: 700;
-  font-style: unset;
-  font-size: 82%;
-  word-spacing: 0;
-  letter-spacing: -0.5px;
-
-}
-.card-h3-03{
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
 
