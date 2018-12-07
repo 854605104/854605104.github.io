@@ -599,7 +599,7 @@ function resetPreviousCoord() {
 function changeCoordColor(row, column) {
     if (row && row !== '' && column && column !== '') {
         var id = 'r' + row + 'c' + column;
-        d3.select('#' + id).style("stroke", HIGHTLIGHT_COLOR).style("stroke-width",3);
+        d3.select('#' + id).style("stroke", '#c1272d').style("stroke-width",2);
         patent_color = d3.select('#'+id).attr("fill");
         console.log(patent_color);
         return true;
