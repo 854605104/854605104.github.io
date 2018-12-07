@@ -243,6 +243,7 @@ input[type=submit]:active {
 }
 .card-content{
   border-radius: 16px;
+  background-color: white;
 }
 
 .card-content:hover{
