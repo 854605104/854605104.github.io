@@ -1,7 +1,7 @@
 let videoPlaying = false;
 function turnOnCamera() {
   const constraints = {
-    video: true,
+    video: {width: {min: 1280}, height: {min: 720}},
     audio: false,
   };
   videoPlaying = false;
