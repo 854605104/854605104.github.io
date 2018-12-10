@@ -45,41 +45,7 @@ function turnOnCamera() {
     console.error(err.name + ': ' + err.message);
   });
 }
-<!------------------------------------------------------------->
-/*
-async function run() {
-  await faceapi.loadMtcnnModel('/')
-  await faceapi.loadFaceRecognitionModel('/')
 
-  const mtcnnResults = await faceapi.mtcnn(document.getElementById('#v'), mtcnnForwardParams)
-
-  const mtcnnForwardParams = {
-    // number of scaled versions of the input image passed through the CNN
-    // of the first stage, lower numbers will result in lower inference time,
-    // but will also be less accurate
-    maxNumScales: 10,
-    // scale factor used to calculate the scale steps of the image
-    // pyramid used in stage 1
-    scaleFactor: 0.709,
-    // the score threshold values used to filter the bounding
-    // boxes of stage 1, 2 and 3
-    scoreThresholds: [0.6, 0.7, 0.7],
-    // mininum face size to expect, the higher the faster processing will be,
-    // but smaller faces won't be detected
-    minFaceSize: 200
-  };
-
-  faceapi.drawDetection('overlay', mtcnnResults.map(res => res.faceDetection), { withScore: false })
-  faceapi.drawLandmarks('overlay', mtcnnResults.map(res => res.faceLandmarks), { lineWidth: 4, color: 'red' })
-
-  const fullFaceDescriptions = await faceapi.allFacesMtcnn(document.getElementById('#v'), mtcnnParams)
-}
-*/
-
-
-
-
-<!------------------------------------------------------------->
 var status=false;
 var namecount = 0;
 var filename;
@@ -100,9 +66,9 @@ function startTakePhoto(){
       if(videoPlaying) {
         namecount++;
         let canvas = document.getElementById('canvas');
-        canvas.width = v.videoWidth;
-        canvas.height = v.videoHeight;
-        canvas.getContext('2d').drawImage(v, 0, 0);
+        canvas.width = v.videoWidth/4;
+        canvas.height = v.videoHeight/4;
+        canvas.getContext('2d').drawImage(v, 0, 0,canvas.width,canvas.height);
         downloadPhoto();
       }
     },2500);
