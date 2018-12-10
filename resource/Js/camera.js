@@ -199,7 +199,7 @@ function searchPhoto() {
     success(data){
       console.log("Got Face++ Data");
       length = data.results.length;
-      console.log(data);
+      //console.log(data);
       if (length != 0) {
         var confidence = data.results[0].confidence;
         console.log("confidence: "+confidence);
@@ -273,8 +273,7 @@ function alertUnknownPerson() {
     'width'     : '350px',
     'height'    : 'auto',
     'color'     : '#fff',
-    'opacity'   : '0.9',
-    'box-shadow':'0 2px 10px rgba(0, 0, 0, 0.3)'
+    'opacity'   : '1',
   }).show();
   $('div.tips-title').css({
     'margin-top':'20px',
@@ -324,7 +323,7 @@ function showTips(content, height, time ){
     'width'     : '350px',
     'height'    : 'auto',
     'color'     : '#555555',
-    'opacity'   : '0.9',
+    'opacity'   : '1',
     'box-shadow':'0 2px 10px rgba(0, 0, 0, 0.3)'
   }).show();
   $('div.tips-title').css({
@@ -367,7 +366,7 @@ function alertTeacher(a) {
     'width'     : '350px',
     'height'    : 'auto',
     'color'     : '#fff',
-    'opacity'   : '0.9',
+    'opacity'   : '1',
     'box-shadow':'0 2px 10px rgba(0, 0, 0, 0.3)'
   }).show();
   $('div.tips-title').css({
