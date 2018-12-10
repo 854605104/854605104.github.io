@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48f7b9a3-d915-402a-8c5e-dcf446ecb2d3" name="Default Changelist" comment="Bugs fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Instruction_patent_page_01.html" beforeDir="false" afterPath="$PROJECT_DIR$/Instruction_patent_page_01.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Instruction_patent_page_02.html" beforeDir="false" afterPath="$PROJECT_DIR$/Instruction_patent_page_02.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Instruction_patent_page_03.html" beforeDir="false" afterPath="$PROJECT_DIR$/Instruction_patent_page_03.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="48f7b9a3-d915-402a-8c5e-dcf446ecb2d3" name="Default Changelist" comment="Bugs fixed" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -237,12 +231,12 @@
       <workItem from="1544173687525" duration="83000" />
       <workItem from="1544176545424" duration="627000" />
       <workItem from="1544181217350" duration="34000" />
-      <workItem from="1544439664573" duration="785000" />
+      <workItem from="1544439664573" duration="1043000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3346000" />
+    <option name="totallyTimeSpent" value="3604000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
