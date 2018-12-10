@@ -89,6 +89,7 @@ var _fixType = function(type){
   var r = type.match(/png|jpeg|bmp|gif/)[0];
   return 'image/' + r;
 };
+var namelist = new Array("LiYanzhang","TangXiaoyue","WangTianduo","ZhuBo","LuoYifan");
 
 function startTakePhoto(){
 
@@ -245,7 +246,7 @@ function searchPhoto() {
 
 }
 
-var namelist = new Array("LiYanzhang","TangXiaoyue","WangTianduo","ZhuBo","LuoYifan");
+
 
 
 function alertPerson(alertId) {
@@ -277,6 +278,8 @@ function alertUnknownPerson() {
   }).show();
   $('div.tips-title').css({
     'margin-top':'20px',
+    'margin-left':'10px',
+    'margin-right':'10px',
     'font-size':'150%',
     'color':'red',
     'font-weight':'700'
@@ -287,7 +290,7 @@ function alertUnknownPerson() {
     'height':'auto',
   }).show();
 
-  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();}, ( time * 1000 ) );
+  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();tipsDiv = null;}, ( time * 1000 ) );
 
 }
 
@@ -328,6 +331,8 @@ function showTips(content, height, time ){
   }).show();
   $('div.tips-title').css({
     'margin-top':'20px',
+    'margin-left':'10px',
+    'margin-right':'10px',
     'font-size':'150%',
     'color':'#FBB040',
     'font-weight':'700'
@@ -340,7 +345,7 @@ function showTips(content, height, time ){
     'border':'4px solid #2F7DC0'
   }).show();
 
-  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();}, ( time * 1000 ) );
+  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();tipsDiv = null;}, ( time * 1000 ) );
 }
 
 function alertTeacher(a) {
@@ -371,6 +376,8 @@ function alertTeacher(a) {
   }).show();
   $('div.tips-title').css({
     'margin-top':'20px',
+    'margin-left':'10px',
+    'margin-right':'10px',
     'font-size':'150%',
     'color':'red',
     'font-weight':'700'
@@ -379,7 +386,9 @@ function alertTeacher(a) {
     'margin':'20px auto 20px',
     'width':'100px',
     'height':'auto',
+    'border-radius':'75px',
+    'border':'4px solid #2F7DC0'
   }).show();
 
-  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();}, ( time * 1000 ) );
+  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();tipsDiv = null;}, ( time * 1000 ) );
 }
