@@ -245,7 +245,7 @@ function searchPhoto() {
 
 }
 
-var namelist = new Array("LiYanzhang","TangXiaoyue","WangTianduo");
+var namelist = new Array("LiYanzhang","TangXiaoyue","WangTianduo","ZhuBo","LuoYifan");
 
 
 function alertPerson(alertId) {
