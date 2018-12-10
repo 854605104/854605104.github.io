@@ -89,7 +89,7 @@ var _fixType = function(type){
   var r = type.match(/png|jpeg|bmp|gif/)[0];
   return 'image/' + r;
 };
-var namelist = new Array("LiYanzhang","TangXiaoyue","WangTianduo","ZhuBo","LuoYifan");
+var namelist = new Array("LiYanzhang","TangXiaoyue","WangTianduo","ZhuBo","LuoYifan","NgaiMan","Norman");
 
 function startTakePhoto(){
 
@@ -205,7 +205,6 @@ function searchPhoto() {
         var confidence = data.results[0].confidence;
         console.log("confidence: "+confidence);
         if (confidence >= 60) {
-          callbackdata(data);
           var newid = data.results[0].user_id;
           console.log(newid);
           var repeat = 0;
@@ -221,6 +220,7 @@ function searchPhoto() {
               alertTeacher(2);
             }
             else{
+              callbackdata(data);
               id.push(newid);
               var p = document.getElementById("attendance-status");
               p.innerHTML = "Number of Students Attended: "+id.length;
@@ -259,7 +259,7 @@ function alertUnknownPerson() {
   var time = 2.5;
   var windowWidth  = $(window).width();
 
-  var tipsDiv = '<div class="tipsClass">' + '<div class="row tips-title"> Check In Failed! </div>' +'<div class="row" style="margin-bottom: 20px"><img alt="" src="resource/photo/fail.png"></div>'+ '</div>';
+  var tipsDiv = '<div id="tips" class="tipsClass">' + '<div class="row tips-title"> Check In Failed! </div>' +'<div class="row" style="margin-bottom: 20px"><img alt="" src="resource/photo/fail.png"></div>'+ '</div>';
 
   $( 'body' ).append( tipsDiv );
   $( 'div.tipsClass' ).css({
@@ -273,7 +273,7 @@ function alertUnknownPerson() {
     'text-align': 'center',
     'width'     : '350px',
     'height'    : 'auto',
-    'color'     : '#fff',
+    'color'     : '#555555',
     'opacity'   : '1',
   }).show();
   $('div.tips-title').css({
@@ -290,7 +290,7 @@ function alertUnknownPerson() {
     'height':'auto',
   }).show();
 
-  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();tipsDiv = null;}, ( time * 1000 ) );
+  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();$("#tips").remove();}, ( time * 1000 ) );
 
 }
 
@@ -301,16 +301,16 @@ function showTips(content, height, time ){
   //窗口的宽度
   var windowWidth  = $(window).width();
   var count = 0;
-  var tipsDiv;
 
   for(var i = 0;i<namelist.length;i++){
     if(content===namelist[i]){
-      tipsDiv = '<div class="tipsClass">' + '<div class="row tips-title"> Check In Success! </div>' +'<div class="row"><img alt="" id="showImg" src="resource/photo/'+content+'.jpg"></div>'+'<div class="row" style="margin-bottom: 20px">'+content+'</div>'+ '</div>';
+      console.log("111111");
+      var tipsDiv = '<div id="tips" class="tipsClass">' + '<div class="row tips-title"> Check In Success! </div>' +'<div class="row"><img alt="" id="showImg" src="resource/photo/'+content+'.jpg"></div>'+'<div class="row" style="margin-bottom: 20px">'+content+'</div>'+ '</div>';
       count++;
     }
   }
   if(count===0){
-    tipsDiv = '<div class="tipsClass">' + '<div class="row tips-title"> Check In Success! </div>' +'<div class="row"><img alt="" id="showImg" src="resource/photo/newvisitor.jpg"></div>'+'<div class="row" style="margin-bottom: 20px">NEW VISITOR</div>'+ '</div>';
+    var tipsDiv = '<div id="tips" class="tipsClass">' + '<div class="row tips-title"> Check In Success! </div>' +'<div class="row"><img alt="" id="showImg" src="resource/photo/newvisitor.jpg"></div>'+'<div class="row" style="margin-bottom: 20px">VISITOR'+content+'</div>'+ '</div>';
   }
 
   $( 'body' ).append( tipsDiv );
@@ -331,8 +331,6 @@ function showTips(content, height, time ){
   }).show();
   $('div.tips-title').css({
     'margin-top':'20px',
-    'margin-left':'10px',
-    'margin-right':'10px',
     'font-size':'150%',
     'color':'#FBB040',
     'font-weight':'700'
@@ -345,7 +343,7 @@ function showTips(content, height, time ){
     'border':'4px solid #2F7DC0'
   }).show();
 
-  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();tipsDiv = null;}, ( time * 1000 ) );
+  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();$("#tips").remove();}, ( time * 1000 ) );
 }
 
 function alertTeacher(a) {
@@ -354,9 +352,9 @@ function alertTeacher(a) {
   var windowWidth  = $(window).width();
 
   if(a===1){
-    var tipsDiv = '<div class="tipsClass">' + '<div class="row tips-title">Welcome!</div>' +'<div class="row"><img id="showImg" src="resource/photo/Ngai-ManCheung.jpg"></div>'+'<div class="row" style="margin-bottom: 20px">Ngai-Man Cheung</div>'+ '</div>';
+    var tipsDiv = '<div id="tips" class="tipsClass">' + '<div class="row tips-title">Welcome!</div>' +'<div class="row"><img id="showImg" src="resource/photo/Ngai-ManCheung.jpg"></div>'+'<div class="row" style="margin-bottom: 20px">Ngai-Man Cheung</div>'+ '</div>';
   }else if(a===2){
-    var tipsDiv = '<div class="tipsClass">' + '<div class="row tips-title">Welcome!</div>' +'<div class="row"><img id="showImg" src="resource/photo/NormanLee.jpg"></div>'+'<div class="row" style="margin-bottom: 20px">Norman Lee</div>'+ '</div>';
+    var tipsDiv = '<div id="tips" class="tipsClass">' + '<div class="row tips-title">Welcome!</div>' +'<div class="row"><img id="showImg" src="resource/photo/NormanLee.jpg"></div>'+'<div class="row" style="margin-bottom: 20px">Norman Lee</div>'+ '</div>';
   }
   $( 'body' ).append( tipsDiv );
   $( 'div.tipsClass' ).css({
@@ -376,8 +374,6 @@ function alertTeacher(a) {
   }).show();
   $('div.tips-title').css({
     'margin-top':'20px',
-    'margin-left':'10px',
-    'margin-right':'10px',
     'font-size':'150%',
     'color':'red',
     'font-weight':'700'
@@ -390,5 +386,5 @@ function alertTeacher(a) {
     'border':'4px solid #2F7DC0'
   }).show();
 
-  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();tipsDiv = null;}, ( time * 1000 ) );
+  setTimeout( function(){$( 'div.tipsClass' ).fadeOut();$("#tips").remove();}, ( time * 1000 ) );
 }
